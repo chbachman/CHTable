@@ -10,6 +10,10 @@
 		CB2D85DC20CB7EA7009D3A3A /* CHTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2D85D220CB7EA7009D3A3A /* CHTable.framework */; };
 		CB2D85E120CB7EA7009D3A3A /* CHTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D85E020CB7EA7009D3A3A /* CHTableTests.swift */; };
 		CB2D85E320CB7EA7009D3A3A /* CHTable.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2D85D520CB7EA7009D3A3A /* CHTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB2D85F020CB7EBA009D3A3A /* CHDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D85EC20CB7EBA009D3A3A /* CHDisplayable.swift */; };
+		CB2D85F120CB7EBA009D3A3A /* CHSectionedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D85ED20CB7EBA009D3A3A /* CHSectionedTable.swift */; };
+		CB2D85F220CB7EBA009D3A3A /* CHFilterTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D85EE20CB7EBA009D3A3A /* CHFilterTableController.swift */; };
+		CB2D85F320CB7EBA009D3A3A /* CHTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D85EF20CB7EBA009D3A3A /* CHTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		CB2D85DB20CB7EA7009D3A3A /* CHTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CHTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2D85E020CB7EA7009D3A3A /* CHTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHTableTests.swift; sourceTree = "<group>"; };
 		CB2D85E220CB7EA7009D3A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2D85EC20CB7EBA009D3A3A /* CHDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDisplayable.swift; sourceTree = "<group>"; };
+		CB2D85ED20CB7EBA009D3A3A /* CHSectionedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSectionedTable.swift; sourceTree = "<group>"; };
+		CB2D85EE20CB7EBA009D3A3A /* CHFilterTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHFilterTableController.swift; sourceTree = "<group>"; };
+		CB2D85EF20CB7EBA009D3A3A /* CHTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 		CB2D85D420CB7EA7009D3A3A /* CHTable */ = {
 			isa = PBXGroup;
 			children = (
+				CB2D85EC20CB7EBA009D3A3A /* CHDisplayable.swift */,
+				CB2D85EE20CB7EBA009D3A3A /* CHFilterTableController.swift */,
+				CB2D85ED20CB7EBA009D3A3A /* CHSectionedTable.swift */,
+				CB2D85EF20CB7EBA009D3A3A /* CHTableController.swift */,
 				CB2D85D520CB7EA7009D3A3A /* CHTable.h */,
 				CB2D85D620CB7EA7009D3A3A /* Info.plist */,
 			);
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					CB2D85D120CB7EA7009D3A3A = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					CB2D85DA20CB7EA7009D3A3A = {
 						CreatedOnToolsVersion = 9.4;
@@ -194,6 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2D85F120CB7EBA009D3A3A /* CHSectionedTable.swift in Sources */,
+				CB2D85F320CB7EBA009D3A3A /* CHTableController.swift in Sources */,
+				CB2D85F020CB7EBA009D3A3A /* CHDisplayable.swift in Sources */,
+				CB2D85F220CB7EBA009D3A3A /* CHFilterTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +356,7 @@
 		CB2D85E720CB7EA7009D3A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chbachman.CHTable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +383,7 @@
 		CB2D85E820CB7EA7009D3A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +409,7 @@
 		CB2D85EA20CB7EA7009D3A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65KM43KEZT;
 				INFOPLIST_FILE = CHTableTests/Info.plist;
@@ -407,6 +428,7 @@
 		CB2D85EB20CB7EA7009D3A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65KM43KEZT;
 				INFOPLIST_FILE = CHTableTests/Info.plist;
