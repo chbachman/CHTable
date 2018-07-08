@@ -17,8 +17,16 @@ open class CHFilterTableController<Container>: CHTableController<Container>, UIS
 
     // MARK: Convenience Methods
     override public func refresh() {
-        tableView.reloadData()
-        updateSearchResults(for: searchController)
+        refreshSearch()
+        super.refresh()
+    }
+
+    private func refreshSearch() {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+
+        filter(text: text)
     }
 
     // MARK: UISearchBarDelegate, UISearchResultsUpdating
@@ -26,6 +34,8 @@ open class CHFilterTableController<Container>: CHTableController<Container>, UIS
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
+
+        tableView.tableHeaderView?.removeFromSuperview()
 
         tableView.tableHeaderView = searchController.searchBar
 
@@ -48,13 +58,8 @@ open class CHFilterTableController<Container>: CHTableController<Container>, UIS
     }
 
     public func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-
-        filter(text: text)
-
-        tableView.reloadData()
+        refreshSearch()
+        refresh()
     }
 
     private var customFilter: ((String, Container) -> Container)?
@@ -66,7 +71,6 @@ open class CHFilterTableController<Container>: CHTableController<Container>, UIS
     public func filter(text: String) {
         if let filter = customFilter {
             filtered = filter(text, unfiltered)
-            updateElements()
         }
     }
 

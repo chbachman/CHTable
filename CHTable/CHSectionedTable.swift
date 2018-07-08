@@ -76,6 +76,9 @@ open class CHSectionTableController<Header, Container>: CHFilterTableController<
     override public func refresh() {
         rows = [CellSection<Cell>]()
 
+        // The filtering should happen first. We then grab and section the already filtered results.
+        updateElements()
+
         for nah in elements {
             // This is each NaH within our current filter.
             guard let value = get(nah) else {
