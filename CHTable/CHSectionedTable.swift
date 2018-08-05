@@ -18,7 +18,7 @@ open class CHSectionTableController<Header, Container>: CHFilterTableController<
 
     // Comparison checks if the two Headers are the same, and if they are, adds the Cell that created the Header to the Section. 
     // Get returns the Header for the given Cell, allowing comparison on multiple
-    init(_ elements: Container, table: UITableView, reuse: String, get: @escaping (Cell) -> Header?, comparison: @escaping (Header, Header) -> Bool) {
+    public init(_ elements: Container, table: UITableView, reuse: String, get: @escaping (Cell) -> Header?, comparison: @escaping (Header, Header) -> Bool) {
         self.get = get
         self.comparison = comparison
         super.init(elements, table: table, reuse: reuse)
